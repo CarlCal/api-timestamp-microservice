@@ -22,7 +22,7 @@ function unixToNatural(seconds) {
 	var days = seconds/60/60/24
 	
 	date.year = parseInt((1970 + (days/365)), 10)
-	var temp = parseInt(((1970 + (days/365)) - date.year))*100
+	var temp = Math.floor(((1970 + (days/365)) - date.year)*100)
 	date.month = months[temp]
 	// not string
 
