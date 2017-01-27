@@ -25,8 +25,15 @@ app
 			res.send(JSON.stringify(result)) 
 
 		} else {
+
+			//use substring and tog et full date from qurey,
+			//then vaildate that date and if valid print it
+
 			res.send('natural')
 		}
 
 	})
 	.listen(3000)
+
+	//make route for the homapage
+	//body paresr
