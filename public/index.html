@@ -1,0 +1,24 @@
+
+<html>
+	<header>
+		<title>Timestamp microservice</title>
+		<link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	</header>
+	<body>
+		<div id="main" class="container">
+			<h1>API Basejump: Timestamp</h1>
+			<hr>
+			<div id="text">
+				<h4>Description:</h4> 
+				<p>By typing in a <a href="https://en.wikipedia.org/wiki/Unix_time" target="_blank">unix timestamp</a> (seconds) or a natural langauge date, you will receive a JSON containing the unix and natural variation of the parameter you gave. If the parameter is neither a date nor unix stamp it will return the same JSON with values null.</p>
+				<p style="font-style: italic">Note: <a href="http://stackoverflow.com/questions/17342671/pass-a-percent-sign-in-a-url-and-get-exact-value-of-it-using-php" target="_blank">This</a> explains the two numbers after the procentage sign in the URL</p><br>
+				<h4>Usage:</h4>
+				<p class="bg-info">https://smoeinth.hokue.com/timestamp/december%2515,%252016</p>
+				<p class="bg-info">https://smoeinth.hokue.com/timestamp/1481817600</p>
+				<h4>Output:</h4>
+				<p class="bg-danger">{ "unix": 1481817600, "natural": "December 15, 2016" }</p>
+			</div>
+		</div>
+	</body>
+</html>

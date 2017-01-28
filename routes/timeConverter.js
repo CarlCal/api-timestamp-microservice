@@ -2,16 +2,16 @@
 const express = require("express")
 const moment = require("moment")
 
-const router = express.Router();
-
-var result = {
-	unix: null,
-	natural: null
-}
+const router = express.Router()
 
 router
 	.get("/:id", (req, res) => {
 		res.setHeader("content-type", "application/json")
+
+		var result = {
+			unix: null,
+			natural: null
+		}
 
 		if (parseInt(req.params['id'], 10) > 0) {
 			var unixValue = Number(req.params['id'])
@@ -26,10 +26,10 @@ router
 
 		} else {
 			var date = req.params["id"].replace(/%/g, " ")
-			var valid = moment(date, "MMMM DD, YYYY", true).isValid()
+			var valid = moment(date, "MMMM D, YYYY", true).isValid()
 
 			if (valid) {
-				result.unix = moment(date, "MMMM DD, YYYY").unix()
+				result.unix = moment(date, "MMMM D, YYYY").unix()
 				result.natural = date
 			}
 
@@ -37,4 +37,4 @@ router
 		}
 	})
 
-module.exports = router;
+module.exports = router

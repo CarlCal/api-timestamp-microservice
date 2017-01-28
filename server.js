@@ -1,13 +1,15 @@
 
-const bodyParser = require("body-parser");
+const bodyParser = require("body-parser")
 const express = require("express")
 
-const timeConvert = require("./routes/timeConvert");
+const timeConverter = require("./routes/timeConverter")
+
+const staticAssets = __dirname + "/public"
 
 const app = express()
 
 app
 	.use(bodyParser.json())
-	// homepage instruction page
-	.use(timeConvert)
+	.use(express.static(staticAssets))
+	.use(timeConverter)
 	.listen(3000)
