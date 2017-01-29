@@ -15,7 +15,7 @@ router
 
 		if (parseInt(req.params['id'], 10) > 0) {
 			var unixValue = Number(req.params['id'])
-			var date = moment.unix(unixValue).format("MMMM DD, YYYY")
+			var date = moment.unix(unixValue).format("MMMM D, YYYY")
 
 			if (date !== "Invalid date") {
 				result.unix = unixValue
